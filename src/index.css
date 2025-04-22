@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌙 Default: Dark Theme */
+:root {
+  --bg-dark: #161616;
+  --bg-two: #1c0d44;
+  --white: #ffffff;
+  --red: #da0202;
+  --primary: #1583bd;
+  --success: #26842a;
+  --warning: #f0ad4e;
+
+  --fw-500: 500;
+}
+
+/* ☀️ Light Theme Overrides */
+[data-theme="light"] {
+  --bg-dark: #f5f5f5;
+  --bg-two: #ffffff;
+  --white: #000000;
+  --red: #d90429;
+  --primary: #007bff;
+  --success: #28a745;
+  --warning: #ffc107;
+}
+
+body {
+  background-color: var(--bg-dark);
+  display: grid;
+  place-content: center;
+  min-height: 100lvh;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  color: var(--white);
+}
+
+.task-manager {
+  width: clamp(90%, 550px, 100%);
+  margin: auto;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--bg-two);
+  color: var(--white);
+}
+
+.task-manager h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: var(--fw-500);
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.task-form {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.task-form input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+  border: 0;
+  outline: none;
+}
+
+.task-form .btn {
+  border-radius: 0 10px 10px 0;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.task.done span {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  accent-color: var(--primary);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.btn-delete {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: var(--white);
+  display: grid;
+  place-content: center;
+  flex: none;
+  transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+  background: var(--white);
+  color: var(--red);
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  color: var(--white);
+  font-weight: var(--fw-500);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 1px var(--bg-two);
+  font-size: 0.8rem;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-success {
+  background: var(--success);
+}
+
+.btn-warning {
+  background: var(--warning);
+}
